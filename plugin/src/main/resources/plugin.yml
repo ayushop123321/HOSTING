@@ -1,0 +1,83 @@
+name: MelonMCShop
+version: 1.0.0
+main: com.melonmc.MelonMCShop.MelonMCShop
+api-version: 1.21
+author: MelonMC
+description: Plugin for MelonMC shop to process Discord and web store purchases
+depend: [Vault]
+softdepend: [LuckPerms]
+
+commands:
+  givecoin:
+    description: Give coins to a player
+    usage: /givecoin <player> <amount> <gamemode>
+    permission: melonmc.admin
+    
+  giverank:
+    description: Give a rank to a player
+    usage: /giverank <player> <rank> <gamemode>
+    permission: melonmc.admin
+    
+  is_player_exists:
+    description: Check if a player exists
+    usage: /is_player_exists <player>
+    permission: melonmc.admin
+    
+  setrank:
+    description: Set a player's rank directly via LuckPerms
+    usage: /setrank <player> <rank> [auth_token]
+    permission: melonmc.ranks.set
+    
+  checkrank:
+    description: Check a player's current rank
+    usage: /checkrank <player>
+    permission: melonmc.ranks.check
+    
+  rankinfo:
+    description: Show information about available ranks
+    usage: /rankinfo
+    permission: melonmc.user
+    aliases: [ranks]
+    
+  shopgui:
+    description: Open the shop GUI
+    usage: /shopgui
+    permission: melonmc.user
+    
+  redeem:
+    description: Redeem pending rewards
+    usage: /redeem
+    permission: melonmc.user
+    
+  rewards:
+    description: Check your pending rewards
+    usage: /rewards
+    permission: melonmc.user
+    
+  daily:
+    description: Claim your daily reward
+    usage: /daily
+    permission: melonmc.user
+    aliases: [dailyreward, dailyrewards]
+
+  lpset:
+    description: Set a player's LuckPerms parent group
+    usage: /lpset <player> <kit name>
+    permission: melonmc.admin
+
+permissions:
+  melonmc.admin:
+    description: Allows access to MelonMCShop admin commands
+    default: op
+    
+  melonmc.user:
+    description: Allows access to MelonMCShop user commands
+    default: true
+    
+  melonmc.ranks.set:
+    description: Allows setting player ranks
+    default: op
+    
+  melonmc.ranks.check:
+    description: Allows checking player ranks
+    default: op 

@@ -1,0 +1,38 @@
+{
+  "name": "melonmc-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for MelonMC Minecraft server payments and item delivery",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
+    "setup": "node setup.js"
+  },
+  "bin": {
+    "melonmc-setup": "./setup.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "minecraft",
+    "payments",
+    "melonmc"
+  ],
+  "author": "MelonMC",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/builders": "^1.6.5",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "firebase": "^8.10.1",
+    "rcon": "^1.1.0",
+    "rcon-client": "^4.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "private": true
+}

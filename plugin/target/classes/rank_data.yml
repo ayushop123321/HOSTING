@@ -1,0 +1,18 @@
+# MelonMC Rank Data Storage
+# This file stores player ranks and pending rank assignments
+# Do not edit manually unless you know what you're doing!
+
+# Player UUID to name mapping
+player-uuids:
+  # Format: player_name: player-uuid
+
+# Player ranks
+player-ranks:
+  # Format: player-uuid: rank_name
+
+# Pending rank assignments
+pending-ranks:
+  # Format:
+  # player_name:
+  #   timestamp: 1621234567890
+  #   rank: rank_name 

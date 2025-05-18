@@ -1,0 +1,20 @@
+# Daily rewards configuration for MelonMCShop
+# This file stores player data for daily rewards
+
+# Player data - DO NOT EDIT MANUALLY
+players:
+  # Data is stored by player UUID
+  # example-uuid:
+  #   last-claim: '2023-05-10'  # When they last claimed
+  #   streak: 3                  # Current streak (days in a row)
+
+# Settings
+settings:
+  # Whether to reset streak if a day is missed
+  reset-on-miss: true
+  
+  # How many days before streak resets if player doesn't log in
+  max-streak-age: 2
+  
+  # Whether to send reminders to players who haven't claimed
+  send-reminders: true 

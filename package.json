@@ -1,0 +1,21 @@
+{
+  "name": "melonmc-shop",
+  "version": "1.0.0",
+  "description": "MelonMC Shop System including Discord bot and Minecraft plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd discord-bot && npm start",
+    "dev": "cd discord-bot && npm run dev",
+    "setup": "cd discord-bot && npm run setup"
+  },
+  "keywords": [
+    "minecraft",
+    "discord",
+    "shop",
+    "plugin",
+    "melonmc"
+  ],
+  "author": "MelonMC",
+  "license": "MIT",
+  "private": true
+} 

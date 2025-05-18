@@ -1,0 +1,436 @@
+# MelonMC Shop Plugin Configuration
+
+# General Settings
+settings:
+  # Database type: MYSQL, SQLITE or NONE
+  database-type: NONE
+  
+  # Debug mode (true/false)
+  debug: false
+  
+  # Default gamemode (used if no gamemode is specified)
+  default-gamemode: lifesteal
+
+# Security Settings
+security:
+  # RCON authentication token (auto-generated on first run)
+  rcon-token: ""
+  
+  # Whether to print the token on startup (will be set to false after first run)
+  print-token-on-startup: true
+  
+  # Rate limiting settings
+  rate-limit:
+    enabled: true
+    max-commands-per-minute: 30
+    
+  # Transaction logging
+  transaction-logging:
+    enabled: true
+    retention-days: 30
+
+# Database Settings (ignored if database-type is NONE)
+database:
+  host: localhost
+  port: 3306
+  database: melonmc_shop
+  username: root
+  password: ''
+  
+# Discord integration (for future use)
+discord:
+  enabled: true
+  api-url: "http://localhost:3000/api"
+  api-token: "change-this-to-your-secure-token"
+  ping-interval: 60  # seconds
+
+# Daily Rewards
+daily_rewards:
+  1:
+    type: coins
+    amount: 100
+    description: "100 Coins"
+    icon: GOLD_NUGGET
+  2:
+    type: coins
+    amount: 200
+    description: "200 Coins"
+    icon: GOLD_INGOT
+  3:
+    type: coins
+    amount: 300
+    description: "300 Coins"
+    icon: GOLD_BLOCK
+  4:
+    type: coins
+    amount: 400
+    description: "400 Coins"
+    icon: GOLD_BLOCK
+  5:
+    type: coins
+    amount: 500
+    description: "500 Coins"
+    icon: EMERALD
+  6:
+    type: coins
+    amount: 600
+    description: "600 Coins"
+    icon: EMERALD
+  7:
+    type: coins
+    amount: 1000
+    description: "1000 Coins - Weekly Bonus!"
+    icon: DIAMOND
+
+# Coins Settings
+coins:
+  # Default amounts for various packages
+  packages:
+    small: 500
+    medium: 1000
+    large: 3000
+    xlarge: 5000
+    xxlarge: 10000
+
+# Rank Settings
+ranks:
+  # List of available ranks and their benefits
+  lifesteal:
+    boss:
+      price: 749
+      bonus-coins: 3500
+      fly: true
+      homes: 5
+      kits: [basic, advanced, elite]
+    
+    ace:
+      price: 699
+      bonus-coins: 3000
+      fly: true
+      homes: 4
+      kits: [basic, advanced]
+    
+    deadliest:
+      price: 399
+      bonus-coins: 1500
+      fly-in-spawn: true
+      homes: 3
+      kits: [basic, advanced]
+    
+    immortal:
+      price: 249
+      bonus-coins: 800
+      homes: 2
+      kits: [basic]
+  
+  classic:
+    supreme:
+      price: 749
+      bonus-coins: 3200
+      fly: true
+      homes: 5
+      kits: [basic, advanced, elite]
+    
+    legend:
+      price: 599
+      bonus-coins: 2500
+      fly: true
+      homes: 4
+      kits: [basic, advanced]
+    
+    masterhax:
+      price: 499
+      bonus-coins: 1800
+      fly-in-spawn: true
+      homes: 3
+      kits: [basic, advanced]
+    
+    alpha:
+      price: 299
+      bonus-coins: 800
+      homes: 2
+      kits: [basic]
+  
+  player:
+    eternal:
+      price: 749
+      fly: true
+      homes: 6
+      kits: [basic, advanced, elite, special]
+    
+    immortal:
+      price: 699
+      fly: true
+      homes: 5
+      kits: [basic, advanced, elite]
+    
+    knight:
+      price: 599
+      fly: true
+      homes: 4
+      kits: [basic, advanced]
+    
+    lord:
+      price: 499
+      fly-in-area: true
+      homes: 3
+      kits: [basic, advanced]
+    
+    lady:
+      price: 399
+      fly-in-spawn: true
+      homes: 2
+      kits: [basic]
+    
+    duke:
+      price: 199
+      homes: 2
+      kits: [starter]
+    
+    duchess:
+      price: 99
+      homes: 1
+      kits: [basic]
+    
+    vip_plus:
+      price: 59
+      homes: 1
+      kits: [starter]
+
+# Messages
+messages:
+  # Prefix for all plugin messages
+  prefix: "&a&lMelonMC &8» &f"
+  
+  # Command messages
+  coins-given: "You received &e%amount% coins &fin %gamemode% gamemode!"
+  coins-given-sender: "Successfully gave &e%amount% coins &fto &e%player% &fin %gamemode% gamemode!"
+  
+  rank-given: "You received the &e%rank% &frank in %gamemode% gamemode!"
+  rank-given-sender: "Successfully gave &e%rank% &frank to &e%player% &fin %gamemode% gamemode!"
+  
+  player-exists-online: "Player %player% exists and is online."
+  player-exists-offline: "Player %player% exists but is offline."
+  player-not-found: "Player %player% not found."
+  
+  # Error messages
+  error-no-permission: "You don't have permission to use this command."
+  error-player-not-found: "Player not found."
+  error-invalid-amount: "Invalid amount specified."
+  error-invalid-rank: "Invalid rank specified."
+  error-invalid-gamemode: "Invalid gamemode specified."
+  error-plugin-disabled: "The plugin is currently disabled."
+
+# Ranks Configuration
+ranks:
+  # Skyblock gamemode ranks
+  skyblock:
+    vip:
+      name: "VIP"
+      permissions:
+        - "melonmc.rank.vip"
+        - "melonmc.fly"
+        - "melonmc.homes.3"
+    mvp:
+      name: "MVP"
+      permissions:
+        - "melonmc.rank.vip"
+        - "melonmc.rank.mvp"
+        - "melonmc.fly"
+        - "melonmc.homes.5"
+        - "melonmc.enderchest"
+    mvp_plus:
+      name: "MVP+"
+      permissions:
+        - "melonmc.rank.vip"
+        - "melonmc.rank.mvp"
+        - "melonmc.rank.mvp_plus"
+        - "melonmc.fly"
+        - "melonmc.homes.10"
+        - "melonmc.enderchest"
+        - "melonmc.workbench"
+    mvp_plus_plus:
+      name: "MVP++"
+      permissions:
+        - "melonmc.rank.vip"
+        - "melonmc.rank.mvp"
+        - "melonmc.rank.mvp_plus"
+        - "melonmc.rank.mvp_plus_plus"
+        - "melonmc.fly"
+        - "melonmc.homes.20"
+        - "melonmc.enderchest"
+        - "melonmc.workbench"
+        - "melonmc.nick"
+  
+  # Survival gamemode ranks
+  survival:
+    vip:
+      name: "VIP"
+      permissions:
+        - "melonmc.survival.rank.vip"
+        - "melonmc.survival.homes.3"
+        - "melonmc.survival.warps.3"
+    mvp:
+      name: "MVP"
+      permissions:
+        - "melonmc.survival.rank.vip"
+        - "melonmc.survival.rank.mvp"
+        - "melonmc.survival.homes.5"
+        - "melonmc.survival.warps.5"
+        - "melonmc.survival.enderchest"
+    mvp_plus:
+      name: "MVP+"
+      permissions:
+        - "melonmc.survival.rank.vip"
+        - "melonmc.survival.rank.mvp"
+        - "melonmc.survival.rank.mvp_plus"
+        - "melonmc.survival.homes.8"
+        - "melonmc.survival.warps.8"
+        - "melonmc.survival.enderchest"
+        - "melonmc.survival.workbench"
+    mvp_plus_plus:
+      name: "MVP++"
+      permissions:
+        - "melonmc.survival.rank.vip"
+        - "melonmc.survival.rank.mvp"
+        - "melonmc.survival.rank.mvp_plus"
+        - "melonmc.survival.rank.mvp_plus_plus"
+        - "melonmc.survival.homes.12"
+        - "melonmc.survival.warps.12"
+        - "melonmc.survival.enderchest"
+        - "melonmc.survival.workbench"
+        - "melonmc.survival.nick"
+
+# Coin packages configuration
+coins:
+  skyblock:
+    small:
+      amount: 1000
+      name: "Small Coin Package"
+    medium:
+      amount: 5000
+      name: "Medium Coin Package"
+    large:
+      amount: 10000
+      name: "Large Coin Package"
+    mega:
+      amount: 25000
+      name: "Mega Coin Package"
+  survival:
+    small:
+      amount: 500
+      name: "Small Coin Package"
+    medium:
+      amount: 2500
+      name: "Medium Coin Package"
+    large:
+      amount: 7500
+      name: "Large Coin Package"
+    mega:
+      amount: 20000
+      name: "Mega Coin Package"
+
+# Messages configuration
+messages:
+  prefix: "&a&lMelonMC &8» &f"
+  player_not_found: "Player not found."
+  invalid_rank: "Invalid rank specified."
+  invalid_gamemode: "Invalid gamemode specified."
+  coin_amount_invalid: "Invalid coin amount specified."
+  
+  rank_given: "Rank &e{rank} &fhas been given to &a{player} &ffor gamemode &6{gamemode}&f."
+  coins_given: "&e{amount} coins &fhave been given to &a{player} &ffor gamemode &6{gamemode}&f."
+  
+  # RCON responses
+  rcon_player_exists: "PLAYER_EXISTS:{result}"
+  rcon_rank_given: "RANK_GIVEN:{player}:{rank}:{gamemode}:{success}"
+  rcon_coins_given: "COINS_GIVEN:{player}:{amount}:{gamemode}:{success}"
+  
+# Store pending coins for offline players
+pending_coins:
+  # Will be populated automatically
+
+# Minecraft ranks - used for rankinfo command and rank assignments
+ranks:
+  eternal:
+    display-name: "Eternal"
+    price: "749rs"
+    description: "Our highest tier rank with all perks"
+    color: "GOLD"
+    commands:
+      - "lp user %player% parent set eternal"
+  
+  immortal:
+    display-name: "Immortal"
+    price: "699rs"
+    description: "Premium rank with most features"
+    color: "GREEN"
+    commands:
+      - "lp user %player% parent set immortal"
+      
+  knight:
+    display-name: "Knight"
+    price: "599rs"
+    description: "High tier rank with exclusive perks"
+    color: "DARK_GREEN"
+    commands:
+      - "lp user %player% parent set knight"
+      
+  lord:
+    display-name: "Lord"
+    price: "499rs"
+    description: "Mid-tier rank with great perks"
+    color: "BLUE"
+    commands:
+      - "lp user %player% parent set lord"
+      
+  lady:
+    display-name: "Lady"
+    price: "399rs"
+    description: "Mid-tier rank with great perks"
+    color: "LIGHT_PURPLE"
+    commands:
+      - "lp user %player% parent set lady"
+      
+  duke:
+    display-name: "Duke"
+    price: "199rs"
+    description: "Entry level rank with basic perks"
+    color: "DARK_PURPLE"
+    commands:
+      - "lp user %player% parent set duke"
+      
+  duchess:
+    display-name: "Duchess"
+    price: "99rs"
+    description: "Entry level rank with basic perks"
+    color: "AQUA"
+    commands:
+      - "lp user %player% parent set duchess"
+      
+  vip_plus:
+    display-name: "VIP+"
+    price: "59rs"
+    description: "Basic VIP rank with limited perks"
+    color: "YELLOW"
+    commands:
+      - "lp user %player% parent set vip_plus"
+
+# List of rank groups for permission checks and removals
+rank-groups:
+  - "eternal"
+  - "immortal"
+  - "knight"
+  - "lord"
+  - "lady"
+  - "duke"
+  - "duchess"
+  - "vip_plus"
+  - "vip+"
+
+# RCON settings - read from but not modified by the plugin
+rcon:
+  host: "play.melon-mc.fun"
+  port: 25575
+  password: "godbiltuop123"
+  enabled: true 
