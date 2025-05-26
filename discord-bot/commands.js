@@ -131,8 +131,8 @@ async function handleRankInfo(interaction) {
                 { name: 'PRO RANK', value: '499rs - Access to /fly command, PRO prefix, Colored chat, 4 home locations, Access to exclusive kits, Priority server access' },
                 { name: 'SLAYER RANK', value: '349rs - Access to /fly in specific areas, SLAYER prefix, Colored nickname, 3 home locations, Access to special kits' },
                 { name: 'MONSTER RANK', value: '249rs - Access to /fly in spawn, MONSTER prefix, Colored nickname, 2 home locations, Access to basic kits' },
-                { name: 'ELITE RANK', value: '149rs - ELITE prefix, Colored nickname, 2 home locations, Access to starter kits, Extended playtime rewards' },
-                { name: 'VIP RANK', value: '69rs - VIP prefix, 1 home location, Access to basic features, Daily rewards' }
+                { name: 'ELITE', value: '149rs - ELITE prefix, Colored nickname, 2 home locations, Access to starter kits, Extended playtime rewards' },
+                { name: 'VIP', value: '69rs - VIP prefix, 1 home location, Access to basic features, Daily rewards' }
             )
             .setFooter({ text: 'To purchase a rank, use the /buy command or visit our website: melonmc.xyz' });
         
