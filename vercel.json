@@ -1,0 +1,8 @@
+{
+  "git": {
+    "submodules": true
+  },
+  "buildCommand": "cd Website && echo 'Building from Website directory'",
+  "outputDirectory": "Website",
+  "framework": "static"
+} 
