@@ -1,5 +1,6 @@
 {
-  "framework": null,
-  "outputDirectory": ".",
-  "buildCommand": null
+  "git": {
+    "submodules": true
+  },
+  "outputDirectory": "."
 } 
