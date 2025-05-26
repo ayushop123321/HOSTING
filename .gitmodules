@@ -1,3 +1,1 @@
-[submodule "Website"]
-	path = Website
-	url = https://github.com/ayushop123321/HOSTING.git 
+# Website is not a true Git submodule but a directory in the main repo 
