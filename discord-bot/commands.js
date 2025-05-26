@@ -122,25 +122,24 @@ async function handleHelp(interaction) {
 async function handleRankInfo(interaction) {
     try {
         const rankEmbed = new EmbedBuilder()
-            .setColor('#00cc44')
-            .setTitle('Player Ranks')
-            .setDescription('Buy these ranks and join our Discord for more information')
+            .setColor('#00FF00')
+            .setTitle('MelonMC Rank Information')
+            .setDescription('Here are the ranks available on our server:')
             .addFields(
-                { name: '• Eternal Rank', value: '749rs', inline: false },
-                { name: '• Immortal Rank', value: '699rs', inline: false },
-                { name: '• Knight Rank', value: '599rs', inline: false },
-                { name: '• Lord Rank', value: '499rs', inline: false },
-                { name: '• Lady Rank', value: '399rs', inline: false },
-                { name: '• Duke Rank', value: '199rs', inline: false },
-                { name: '• Duchess Rank', value: '99rs', inline: false },
-                { name: '• VIP+ Rank', value: '59rs', inline: false }
+                { name: 'BOSS RANK', value: '949rs - Access to /fly command, Exclusive BOSS prefix, Colored chat & custom prefix, 6 home locations, Access to all exclusive kits, Priority server access, Special cosmetic effects' },
+                { name: 'KING RANK', value: '749rs - Access to /fly command, KING prefix, Colored chat & custom prefix, 5 home locations, Access to premium kits, Priority server access' },
+                { name: 'PRO RANK', value: '499rs - Access to /fly command, PRO prefix, Colored chat, 4 home locations, Access to exclusive kits, Priority server access' },
+                { name: 'SLAYER RANK', value: '349rs - Access to /fly in specific areas, SLAYER prefix, Colored nickname, 3 home locations, Access to special kits' },
+                { name: 'MONSTER RANK', value: '249rs - Access to /fly in spawn, MONSTER prefix, Colored nickname, 2 home locations, Access to basic kits' },
+                { name: 'ELITE RANK', value: '149rs - ELITE prefix, Colored nickname, 2 home locations, Access to starter kits, Extended playtime rewards' },
+                { name: 'VIP RANK', value: '69rs - VIP prefix, 1 home location, Access to basic features, Daily rewards' }
             )
-            .setFooter({ text: 'Join our Discord: discord.gg/melonmc' });
+            .setFooter({ text: 'To purchase a rank, use the /buy command or visit our website: melonmc.xyz' });
         
         await interaction.reply({ embeds: [rankEmbed] });
     } catch (error) {
-        console.error('Error handling rankinfo command:', error);
-        await safeReply(interaction, '❌ An error occurred while processing the rankinfo command.');
+        console.error('Error handling rank info command:', error);
+        await interaction.reply('There was an error displaying rank information. Please try again later.');
     }
 }
 
