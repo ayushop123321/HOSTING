@@ -26,7 +26,7 @@
     "dotenv": "^16.5.0",
     "firebase": "^8.10.1",
     "rcon": "^1.1.0",
-    "rcon-client": "^4.2.3"
+    "rcon-client": "^4.2.5"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
